@@ -2,9 +2,9 @@ const quizContainer = document.getElementById('quiz');
 const startButton = document.querySelector('#homepage button');
 const questions = [
   {
-    question: 'Question 1: What is the capital of France?',
-    options: ['Paris', 'London', 'Berlin', 'Madrid'],
-    answer: 'Paris'
+    question: 'Question 1: Inside of what element do you put Javascript',
+    options: ['<script>', '<h1>', '<p>', '<link>'],
+    answer: '<script>'
   },
   {
     question: 'Question 2: Which planet is known as the Red Planet?',
@@ -65,3 +65,7 @@ function checkAnswer(selectedOption, correctAnswer) {
 function displayResult() {
   quizContainer.innerHTML = `<h2>Your score: ${score}/${questions.length}</h2>`;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  startButton.addEventListener('click', startQuiz);
+});
