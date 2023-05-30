@@ -7,11 +7,50 @@ const questions = [
     answer: '<script>'
   },
   {
-    question: 'Question 2: Which planet is known as the Red Planet?',
-    options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
-    answer: 'Mars'
+    question: 'Question 2: Which way properly declared a variable?',
+    options: ['variable = x', 'var = x', 'declare x', 'x = var'],
+    answer: 'var = x'
   },
-  // Add more questions here...
+  {
+    question: 'Question 3: How do you write a comment in JavaScript',
+    options: ['// this is a comment', '<--this is a comment-->', 'comment = this is a comment', '(this is a comment)'],
+    answer: '// this is a comment'
+  },
+  {
+    question: 'Question 4: What will the following code log: console.log(2 + "2")',
+    options: ['4', '2 + "2"', 'nothing', '22'],
+    answer: '22'
+  },
+  {
+    question: 'Question 5: What will the following code log: var x = 10; console.log(x === "10")',
+    options: ['error', 'Undefined', 'False', 'True'],
+    answer: 'False'
+  },
+  {
+    question: 'Question 6: What method can be used to change a string to upper case letters',
+    options: ['toUpperCaseCase()', 'toUppercase()', 'toUpperCase()', 'toUpper()'],
+    answer: 'toUpperCase()'
+  },
+  {
+    question: 'Question 7: Which method is used to remove the last element from an array',
+    options: ['delete ()', 'pop()', 'shift()', 'remove()'],
+    answer: 'pop()'
+  },
+  {
+    question: 'Question 8: What does the typeof operator in JavaScript return for an array',
+    options: ['array', 'object', 'array', 'undefined'],
+    answer: 'object'
+  },
+  {
+    question: 'Question 9: Which function is used to parse a string and return an intege?',
+    options: ['parseInt()', 'stringToInt()', 'toInteger()', 'parseInteger()'],
+    answer: 'parseInt()'
+  },
+  {
+    question: 'Question 10: What is the correct syntax to create a function in',
+    options: ['function = myFunction()', 'function myFunction()', 'myFunction = function()', 'myFunction() = function'],
+    answer: 'function myFunction()'
+  },
 ];
 
 let currentQuestion = 0;
