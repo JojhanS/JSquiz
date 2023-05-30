@@ -1,0 +1,2 @@
+# JSquiz
+Short JavaScript quiz
