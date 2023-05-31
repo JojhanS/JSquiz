@@ -11,6 +11,5 @@ https://jojhans.github.io/JSquiz/
 ## Usage
 
 Click the start quiz button once it loads and the quiz will start! You have 5 minutes to answer, but if you get a question wrong it will reduce your time by 20 seconds. 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+    
+![Website](./assets/images/screenshot.png)
