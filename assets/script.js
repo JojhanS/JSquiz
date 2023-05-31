@@ -3,6 +3,7 @@ const startButton = document.querySelector('#homepage button');
 const timerElement = document.getElementById('timer');
 let seconds = 300;
 
+//array containing questions
 const questions = [
   {
     question: 'Question 1: Inside of what element do you put Javascript',
@@ -59,6 +60,7 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 
+//function to start quiz
 function startQuiz() {
   // Hide the homepage and show the quiz
   document.getElementById('homepage').style.display = 'none';
@@ -66,6 +68,7 @@ function startQuiz() {
 
   // Display the first question
   displayQuestion();
+  //updates timer
   timerInterval = setInterval(updateTimer, 1000)
 }
 
@@ -76,18 +79,11 @@ function updateTimer() {
       .toString()
       .padStart(2, '0')}`;
   timerElement.textContent = `Time Remaining: ${formattedTime}`;
-
-  if (seconds === 0) {
-      // Time's up, handle accordingly
-      clearInterval(timerInterval);
-      // Add your code here to handle the time's up event
-  } else {
-      seconds--; // Decrease the remaining seconds
-  }
 }
 
-
+//function that shows the questions
 function displayQuestion() {
+  // creates divs for each question and displays them after theyre answered
   const questionData = questions[currentQuestion];
   const questionElement = document.createElement('div');
   questionElement.classList.add('question');
@@ -109,11 +105,12 @@ function displayQuestion() {
   quizContainer.appendChild(optionsElement);
 }
 
+//if answer is correct add 1 to your score, if its wrong remove 20 seconds from timer
 function checkAnswer(selectedOption, correctAnswer) {
   if (selectedOption === correctAnswer) {
     score++;
   } else {
-    seconds -= 20; // Decrement the timer by 20 seconds for incorrect answers
+    seconds -= 20;
   }
 
   currentQuestion++;
@@ -125,10 +122,12 @@ function checkAnswer(selectedOption, correctAnswer) {
   }
 }
 
+//displays your score
 function displayResult() {
   quizContainer.innerHTML = `<h2>Your score: ${score}/${questions.length}</h2>`;
 }
 
+//event listener for button, starts quiz on click
 document.addEventListener('DOMContentLoaded', function() {
   startButton.addEventListener('click', startQuiz);
 });
