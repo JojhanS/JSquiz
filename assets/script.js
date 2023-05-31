@@ -1,5 +1,8 @@
 const quizContainer = document.getElementById('quiz');
 const startButton = document.querySelector('#homepage button');
+const timerElement = document.getElementById('timer');
+let seconds = 300;
+
 const questions = [
   {
     question: 'Question 1: Inside of what element do you put Javascript',
@@ -63,7 +66,26 @@ function startQuiz() {
 
   // Display the first question
   displayQuestion();
+  timerInterval = setInterval(updateTimer, 1000)
 }
+
+function updateTimer() {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  const formattedTime = `${minutes.toString().padStart(2, '0')}:${remainingSeconds
+      .toString()
+      .padStart(2, '0')}`;
+  timerElement.textContent = `Time Remaining: ${formattedTime}`;
+
+  if (seconds === 0) {
+      // Time's up, handle accordingly
+      clearInterval(timerInterval);
+      // Add your code here to handle the time's up event
+  } else {
+      seconds--; // Decrease the remaining seconds
+  }
+}
+
 
 function displayQuestion() {
   const questionData = questions[currentQuestion];
@@ -90,6 +112,8 @@ function displayQuestion() {
 function checkAnswer(selectedOption, correctAnswer) {
   if (selectedOption === correctAnswer) {
     score++;
+  } else {
+    seconds -= 20; // Decrement the timer by 20 seconds for incorrect answers
   }
 
   currentQuestion++;
